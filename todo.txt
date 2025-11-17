@@ -1,0 +1,13 @@
+
+
+add comment routes and functions
+    - add user exists check into createComment logic?
+
+Test user register function in auth-controller
+    - new users with duplicate emails should cause a 'p2002' conflict error with prisma client
+
+add refresh token system for security and UX 
+    -> checkout this link for refresh token implementation https://www.youtube.com/watch?v=mbsmsi7l3r4
+
+Does Admin Login function in Auth controller need to be validated by checking 
+    Validation Results for errors and returning immediately if there are? Probably

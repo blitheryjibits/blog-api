@@ -1,0 +1,39 @@
+POST http://localhost:3000/comments/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwNDIxMzM4LCJleHAiOjE3NjA0MjIyMzh9.N76C6j4I2CmcDo86UIio9RIkgTB6NhWrPMSEGvKnTtk
+Content-type: application/json
+
+{
+    "content": "AND YET Another comment for the REST api blog post"    
+}
+
+###
+# get all comments
+
+GET http://localhost:3000/comments
+Content-Type: application/json
+
+###
+# user deletes their own comment using comment id
+
+DELETE http://localhost:3000/comments/1/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwMzU1NTAwLCJleHAiOjE3NjAzNTY0MDB9._gOO52y6omAcG1AGmaUJkNibrinotonQb9QDhmBbDc8
+
+###
+# get comments from a post
+GET http://localhost:3000/comments/1/
+Content-Type: application/json
+
+###
+# get a single comment from a post
+GET http://localhost:3000/comments/1/6
+Content-Type: application/json
+
+###
+# update a comment
+PUT http://localhost:3000/comments/1/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwNDI0ODk3LCJleHAiOjE3NjA0MjU3OTd9.FgiTuwHOAGba2BL9jUkmpPCQMlcURNI9PZhSK71IMP4
+Content-Type: application/json
+
+{
+    "content": "This is the updated content of an old post with postId 1 and commentId 6"
+}

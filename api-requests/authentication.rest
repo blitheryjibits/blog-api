@@ -1,0 +1,39 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com", 
+    "password": "Testpassword1!"
+}
+
+###
+# create user with duplicate email which should throw error
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com", 
+    "password": "Testpassword1!"
+}
+
+###
+#faulty login request
+POST http://localhost:3000/auth/register/
+Content-Type: application/json
+
+{
+    "email": "test@example.com", 
+    "password": "Testpassword1!"
+}
+
+###
+# Test update route 
+# Ran and created new credential - test client is now newemail...
+PATCH http://localhost:3000/auth/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU5ODMzOTg1LCJleHAiOjE3NTk4MzQ4ODV9.x_ihInX2JU2XQ66ZjDVW6kQFSzkTzdjp7rlznUwmZjk
+Content-Type: application/json
+
+{
+    "email": "newemail@example.com",
+    "password": "NewP@ssword1"
+}

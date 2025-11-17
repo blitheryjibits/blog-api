@@ -1,0 +1,41 @@
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts/search?term=test
+###
+
+POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwMzQ0MDAzLCJleHAiOjE3NjAzNDQ5MDN9.79g3MzkILmnCByP2foa6eN3L3OIx-6f8ng5sr8zqLVQ
+Content-Type: application/json
+
+{
+    "title": "Seventh test",
+    "content": "Testing changes made to the post-controller. can get post by id",
+    "published": true
+}
+
+###
+
+# Test update function
+PUT http://localhost:3000/posts/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwMzQxMjM2LCJleHAiOjE3NjAzNDIxMzZ9.m5WlQSPsxjq_R7mQohp6LeXYw4k4tE6Xa1YAGNr3stY
+Content-Type: application/json
+
+{
+    "title": "Sixth test",
+    "content": "Testing changes made to the post-controller. Check the update function using post id is working",
+    "published": true
+}
+
+###
+
+# test delete post function
+DELETE http://localhost:3000/posts/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwMzQzMDU5LCJleHAiOjE3NjAzNDM5NTl9.xB52ovto5fnppZDgtTDaGoNCDD4n5c0QaVfDJIgB0Hs
+
+###
+
+# get post by id
+GET http://localhost:3000/posts/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzYwMzQ0MDAzLCJleHAiOjE3NjAzNDQ5MDN9.79g3MzkILmnCByP2foa6eN3L3OIx-6f8ng5sr8zqLVQ
