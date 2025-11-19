@@ -1,21 +1,17 @@
-// import dotenv from 'dotenv';
-// dotenv.config();
-// import express from 'express';
-// import { createServer } from "@vendia/serverless-express";
-// import router from '../src/routers/index.js';
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import { createServer } from "@vendia/serverless-express";
+import router from '../src/routers/index.js';
 
-// const app = express();
+const app = express();
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// app.use('/', router)
-// router.get('/ping', (req, res) => {
-//   res.send('API is running 🚀');
-// });
+app.use('/', router)
+router.get('/ping', (req, res) => {
+  res.send('API is running 🚀');
+});
 
-// export default createServer(app);
-
-export default function handler(req, res) {
-  res.status(200).json({ ok: true, path: req.url });
-}
+export default createServer(app);
