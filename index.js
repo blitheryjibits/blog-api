@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router)
 router.get('/ping', (req, res) => {
-  res.send('API is running 🚀');
+  res.send('API is running ...');
 });
 
 // export default createServer(app);
