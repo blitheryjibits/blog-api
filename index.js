@@ -14,4 +14,10 @@ router.get('/ping', (req, res) => {
   res.send('API is running 🚀');
 });
 
-export default createServer(app);
+// export default createServer(app);
+
+const handler = createServer(app);
+
+export default function (req, res) {
+  return handler(req, res);
+}
