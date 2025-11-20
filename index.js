@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import { createServer } from "@vendia/serverless-express";
-import router from '../src/routers/index.js';
+import router from './src/routers/index.js';
 
 const app = express();
 
