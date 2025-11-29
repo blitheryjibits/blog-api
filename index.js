@@ -8,9 +8,10 @@ const app = express();
 
 app.use(cors({
   origin: 'http://localhost:5173', // temporary frontend origin for testing.
-  credentials: true,
-  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type','Authorization']
+  credentials: false,
+  allowedHeaders: ['Content-Type','Authorization','Accept'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 
 app.options('*', cors()); // ensure preflight handled
