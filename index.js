@@ -6,7 +6,16 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors({ origin: true }));  // temporary enable CORS for all origins. Testing purpose only
+app.use(cors({
+  origin: 'http://localhost:5173', // temporary frontend origin for testing.
+  credentials: true,
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
+}));
+
+app.options('*', cors()); // ensure preflight handled
+  // temporary enable CORS for all origins. Testing purpose only
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
