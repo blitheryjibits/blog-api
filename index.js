@@ -6,7 +6,7 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors());  // temporary enable CORS for all origins. Testing purpose only
+app.use(cors({ origin: true }));  // temporary enable CORS for all origins. Testing purpose only
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
