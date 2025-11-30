@@ -5,8 +5,8 @@ import { postSchema, postIdParam } from '../utils/validation-shemas.mjs'
 
 const router = Router();
 
-router.post('/', authenticateToken, postSchema, postController.createPost);
 router.get('/', postController.getAllPublishedPosts); // Accessible to public
+router.post('/', authenticateToken, postSchema, postController.createPost);
 router.get('/:postId', authenticateToken, postIdParam, postController.getPostById);
 router.get('/search', postController.getPostBySearch);
 router.put('/:postId', authenticateToken, postSchema, postIdParam, postController.updatePost);
