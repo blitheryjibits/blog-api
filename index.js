@@ -19,11 +19,15 @@ app.use((req, res, next) => {
   next();
 });
 
+//app.options('/*', cors()); // ensure preflight handled
+  // temporary enable CORS for all origins. Testing purpose only
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', router); 
 
+app.get('/favicon.ico', (req, res) => res.status(204)); // handle favicon requests
 app.get('/', (req, res) => {
   res.send('Welcome to the Blog API!');
 });
