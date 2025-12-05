@@ -11,7 +11,7 @@ app.use(cors({
 
 }));
 
-app.options('*', cors()); // ensure preflight handled
+app.options('/*', cors()); // ensure preflight handled
   // temporary enable CORS for all origins. Testing purpose only
 
 app.use(express.json());
