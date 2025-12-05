@@ -8,10 +8,18 @@ const app = express();
 
 app.use(cors({
   origin: 'http://127.0.0.1:5173', // temporary frontend origin for testing.
-
+  credentials: false,
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization','Accept'],
+  optionsSuccessStatus: 204
 }));
 
-app.options('/*', cors()); // ensure preflight handled
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
+//app.options('/*', cors()); // ensure preflight handled
   // temporary enable CORS for all origins. Testing purpose only
 
 app.use(express.json());
