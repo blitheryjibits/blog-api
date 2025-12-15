@@ -25,6 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', router);
 
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.get('/', (req, res) => {
   res.send('Welcome to the Blog API!');
 });
