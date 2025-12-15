@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import router from './src/routers/index.js';
+import serverless from 'serverless-http';
 
 const app = express();
 
@@ -27,7 +28,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Blog API!');
 });
 
-export default app;
+// export default app;
+export const handler = serverless(app);
 
 
 // import dotenv from 'dotenv';
