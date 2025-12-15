@@ -7,6 +7,8 @@ import serverless from 'serverless-http';
 
 const app = express();
 
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // ✅ Global CORS for Vercel serverless
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
@@ -25,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', router);
 
-app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Blog API!');
