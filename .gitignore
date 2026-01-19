@@ -6,3 +6,5 @@ node_modules
 request.rest
 seed.js
 api-requests
+vercel.json
+old_index.js
