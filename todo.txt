@@ -11,3 +11,6 @@ add refresh token system for security and UX
 
 Does Admin Login function in Auth controller need to be validated by checking 
     Validation Results for errors and returning immediately if there are? Probably
+
+Implement database connection limit.
+
