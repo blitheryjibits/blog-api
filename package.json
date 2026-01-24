@@ -4,7 +4,9 @@
   "scripts": {
     "build": "tsc",
     "generate": "prisma generate",
-    "start": "node dist/api/index.js",
+    "migrate": "prisma migrate deploy",
+    "start": "node api/index.js",
+    "start:prod": "npm run migrate && npm run start",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
