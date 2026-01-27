@@ -1,5 +1,5 @@
 // import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { prisma, Prisma } from '../../lib/db.js';
+import { prisma, Prisma } from '../lib/db.js';
 import generateToken from '../utils/generate-token.mjs'
 import bcrypt from "bcryptjs";
 import { validationResult, matchedData } from "express-validator";
