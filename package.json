@@ -2,7 +2,8 @@
   "name": "blog-api",
   "version": "1.0.0",
   "scripts": {
-    "build": "rimraf dist && tsc && npx prisma generate",
+    "build": "npx prisma generate",
+    "build:dev": "rimraf dist && tsc && npx prisma generate",
     "generate": "prisma generate",
     "migrate": "prisma migrate deploy",
     "start": "node dist/api/index.js",
