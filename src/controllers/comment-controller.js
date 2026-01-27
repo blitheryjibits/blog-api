@@ -1,4 +1,4 @@
-import { prisma } from '../lib/db.js';
+import { prisma } from '../../lib/db.js';
 import { validationResult, matchedData } from 'express-validator';
 
 /** Functions, in order:
