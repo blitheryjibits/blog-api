@@ -7,8 +7,6 @@ import cors from 'cors';
 
 const app = express();
 
-console.log("node version:", process.version);
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

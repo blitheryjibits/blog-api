@@ -1,6 +1,5 @@
 // import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-// import prisma from "../prisma/client.js";
-import { prisma } from '../../lib/db.ts';
+import { prisma, Prisma } from '../../lib/db.js';
 import generateToken from '../utils/generate-token.mjs'
 import bcrypt from "bcryptjs";
 import { validationResult, matchedData } from "express-validator";
@@ -25,7 +24,7 @@ export async function register(req, res) {
         res.json({ accessToken: token });
 
     } catch (error) {
-        if (error instanceof prisma.PrismaClientKnownRequestError) {
+        if (error instanceof Prisma.PrismaClientKnownRequestError) {
             if (error.code === 'P2002') {
                 const field = e.meta?.target;
                 res.status(409).json({

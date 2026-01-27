@@ -8,3 +8,5 @@ seed.js
 api-requests
 vercel.json
 old_index.js
+prisma/generated
+dist
